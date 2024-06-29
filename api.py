@@ -39,7 +39,7 @@ def teste_token(a):
 def login():
     auth = request.authorization
     if not auth or not auth.username or not auth.password:
-        return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
+        return make_response(jsonify(mensagem='Não foi possível fazer a verificacao'))
     cursor.execute(f"SELECT * FROM Usuario WHERE usuario_username=\'{auth.username}\'")
     usuario = cursor.fetchone()
     username = usuario[2]
