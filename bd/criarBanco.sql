@@ -24,7 +24,7 @@ CREATE TABLE Filme (
 -- Table: Funcao
 CREATE TABLE Funcao (
     funcao_id int  NOT NULL auto_increment,
-    funcao_nome int  NOT NULL,
+    funcao_nome varchar(40)  NOT NULL,
     CONSTRAINT Funcao_pk PRIMARY KEY (funcao_id)
 );
 
@@ -46,6 +46,8 @@ CREATE TABLE Pessoa (
 -- Table: Serie
 CREATE TABLE Serie (
     titulo_id int  NOT NULL,
+    serie_temporadas int NOT NULL,
+    serie_duracao_epi int NOT NULL,
     CONSTRAINT Serie_pk PRIMARY KEY (titulo_id)
 );
 
@@ -62,7 +64,7 @@ CREATE TABLE Temporada (
 CREATE TABLE Titulo (
     titulo_id int  NOT NULL auto_increment,
     titulo_nome varchar(40)  NOT NULL,
-    titulo_data_lancamento int NOT NULL;
+    titulo_data_lancamento int NOT NULL,
     titulo_idade int  NOT NULL,
     titulo_sinopse varchar(200)  NOT NULL,
     CONSTRAINT Titulo_pk PRIMARY KEY (titulo_id)
